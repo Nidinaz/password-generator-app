@@ -1,0 +1,23 @@
+$background-color: hsl(248, 15%, 11%);
+$dark-gray: hsl(248, 10%, 15%);
+$middle-gray: hsl(251, 9%, 53%);
+$light-gray: hsl(242, 11%, 91%);
+
+$green: hsl(127, 100%, 82%);
+$red: hsl(0, 91%, 63%);
+$orange: hsl(13, 95%, 66%);
+$yellow: hsl(42, 91%, 68%);
+
+* {
+  all: none;
+  background-color: $background-color;
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+}
+
+.pwd-container-generated {
+color: $light-gray;
+}

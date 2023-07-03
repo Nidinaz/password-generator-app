@@ -1,4 +1,5 @@
-import "./App.css";
+import "./stylesApp.scss";
+import { FaCopy } from "react-icons/fa"
 import React, { useState } from "react";
 
 const App = () => {
@@ -6,7 +7,6 @@ const App = () => {
   const [password, setPassword] = useState("");
 
   const generatePassword = () => {
-
     //characters define the items used to
     const characters =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
@@ -26,9 +26,29 @@ const App = () => {
   };
 
   return (
-    <div>
-      <button onClick={generatePassword}>Generate Password</button>
-      <p>{password}</p>
+    <div className="main-container">
+      <div className="pwd-container">
+        <p className="pwd-container-generated">{password}</p>
+   
+        <span className="copy-icon"><FaCopy/></span>
+      </div>
+
+      <div className="pwd-parameters">
+        <div className="pwd-parameters-visable"></div>
+        <div className="pwd-parameters-handle"></div>
+        <div className="pwd-parameters-input">
+          <div className="pwd-parameters-input-checkmark"></div>
+          <p className="pwd-parameters-input-text"></p>
+        </div>
+        <div className="pwd-strength">
+          <p className="strenght-text"></p>
+          <div className="strength-level"></div>
+          <div>
+            <button onClick={generatePassword}>Generate</button>
+            <span className="icon-btn"></span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
