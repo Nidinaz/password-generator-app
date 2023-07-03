@@ -1,3 +1,4 @@
+//colors
 $background-color: hsl(248, 15%, 11%);
 $dark-gray: hsl(248, 10%, 15%);
 $middle-gray: hsl(251, 9%, 53%);
@@ -16,8 +17,43 @@ $yellow: hsl(42, 91%, 68%);
 .main-container {
   width: 100%;
   height: 100%;
+  display: flex;
 }
 
-.pwd-container-generated {
-color: $light-gray;
+h3 {
+  color: $middle-gray;
+}
+
+.pwd-container {
+  background-color: $dark-gray;
+  margin: 40px 0;
+  width: 400px;
+  height: 600px;
+  padding: 10px 25px;
+  align-items: center;
+}
+
+.container-generated-pwd {
+  background-color: $dark-gray;
+  font-weight: bold;
+  color: $middle-gray;
+  grid-template-rows: 1fr 1fr;
+  padding: 10px;
+}
+
+.icon-copy {
+  color: $green;
+}
+
+.pwd-parameters-visable p {
+    color: $light-gray;
+}
+
+#slider {
+    height: 1em;
+    background-color: $background-color;
+}
+
+.pwd-button button {
+  background-color: $green;
 }
