@@ -1,5 +1,5 @@
 import "./stylesApp.scss";
-import { FaCopy } from "react-icons/fa"
+import { FaCopy } from "react-icons/fa";
 import React, { useState } from "react";
 
 const App = () => {
@@ -29,8 +29,9 @@ const App = () => {
     <div className="main-container">
       <div className="pwd-container">
         <p className="pwd-container-generated">{password}</p>
-   
-        <span className="copy-icon"><FaCopy/></span>
+        <span className="copy-icon">
+          <FaCopy />
+        </span>
       </div>
 
       <div className="pwd-parameters">
