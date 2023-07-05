@@ -27,7 +27,6 @@ $heading-font-size-S: 18px;
   align-items: center;
 }
 
-
 h3 {
   color: $middle-gray;
   margin: unset;
@@ -100,8 +99,7 @@ h3 {
 .checkbox,
 .lable-name,
 .strength-container,
-.pwd-button
- {
+.pwd-button {
   background-color: $dark-gray;
 }
 
@@ -109,20 +107,23 @@ h3 {
   color: $light-gray;
 }
 
-
 .pwd-strength {
   background-color: $dark-gray;
   display: flex;
-
+  justify-content: center;
 }
 
 .strenght-text {
   background-color: $background-color;
-  width:80%;
+  width: 80%;
   color: $middle-gray;
-
 }
 
-.pwd-button button {
-  width:80%;
+.pwd-button {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  width: 80%;
 }
