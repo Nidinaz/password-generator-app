@@ -9,51 +9,101 @@ $red: hsl(0, 91%, 63%);
 $orange: hsl(13, 95%, 66%);
 $yellow: hsl(42, 91%, 68%);
 
+$heading-font-size-L: 32px;
+$heading-font-size-M: 24px;
+$heading-font-size-S: 18px;
+
 * {
   all: none;
   background-color: $background-color;
+  font-family: "JetBrains Mono", monospace;
 }
 
 .main-container {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 
 h3 {
   color: $middle-gray;
+  margin: unset;
+  margin-top: 3em;
+  font-size: $heading-font-size-S;
 }
 
+//Password
 .pwd-container {
   background-color: $dark-gray;
-  margin: 40px 0;
   width: 400px;
   height: 600px;
-  padding: 10px 25px;
   align-items: center;
+  margin: unset;
 }
 
 .container-generated-pwd {
   background-color: $dark-gray;
-  font-weight: bold;
+  font-weight: bolder;
   color: $middle-gray;
-  grid-template-rows: 1fr 1fr;
-  padding: 10px;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.generated-pwd {
+  color: $light-gray;
+  background-color: $dark-gray;
+  font-size: $heading-font-size-M;
+  justify-content: space-between;
 }
 
 .icon-copy {
+  background-color: $dark-gray;
   color: $green;
+  font-size: $heading-font-size-M;
+  display: flex;
+}
+
+//Slider
+.pwd-parameters {
+  background-color: $dark-gray;
 }
 
 .pwd-parameters-visable p {
-    color: $light-gray;
+  background-color: $dark-gray;
 }
 
 #slider {
-    height: 1em;
-    background-color: $background-color;
+  height: 1em;
 }
 
 .pwd-button button {
   background-color: $green;
+}
+
+.pwd-parameters-length-slider {
+  background-color: $dark-gray;
+}
+
+.pwd-settings-checkbox {
+  background-color: $dark-gray;
+}
+
+.pwd-setting-uppercase,
+.pwd-setting-lowercase,
+.pwd-setting-numbers,
+.pwd-setting-symbols,
+.checkbox,
+.lable-name {
+  background-color: $dark-gray;
+}
+
+.pwd-strength {
+}
+
+.pwd-button {
 }

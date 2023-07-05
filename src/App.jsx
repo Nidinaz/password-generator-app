@@ -17,7 +17,7 @@ const App = () => {
     //and characters.length
     //Math.floor makes sure that it's a whole number
     let newPassword = "";
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 15; i++) {
       newPassword += characters.charAt(
         Math.floor(Math.random() * characters.length)
       );
@@ -30,10 +30,10 @@ const App = () => {
       <h3>Password Generator</h3>
       <div className="pwd-container">
         <div className="container-generated-pwd">
-          <input type="text" placeholder="min 4 char" readOnly />
-        </div>
-        <div className="icon-copy">
-          <FaCopy></FaCopy>
+          <div className="generated-pwd">{password}</div>
+          <div className="icon-copy">
+            <FaCopy></FaCopy>
+          </div>
         </div>
 
         {/* //SlIDER */}
@@ -61,31 +61,43 @@ const App = () => {
           <div className="pwd-settings">
             <div className="pwd-settings-checkbox">
               <div className="pwd-setting-uppercase">
-                <input type="checkbox" id="uppercase" />
-                <label htmlFor="uppercase"> Include Uppercase Letters</label>
+                <input type="checkbox" id="uppercase" className="uppercase" />
+                <label className="lable-name" htmlFor="uppercase">
+                  {" "}
+                  Include Uppercase Letters
+                </label>
               </div>
               <div className="pwd-setting-lowercase">
-                <input type="checkbox" id="lowercase" />
-                <label htmlFor="lowercase"> Include Lowercase Letters</label>
+                <input type="checkbox" id="lowercase" className="lowercase" />
+                <label className="lable-name" htmlFor="lowercase">
+                  {" "}
+                  Include Lowercase Letters
+                </label>
               </div>
               <div className="pwd-setting-numbers">
-                <input type="checkbox" id="numbers" />
-                <label htmlFor="numbers"> Include Numbers</label>
+                <input type="checkbox" id="numbers" className="numbers" />
+                <label className="lable-name" htmlFor="numbers">
+                  {" "}
+                  Include Numbers
+                </label>
               </div>
               <div className="pwd-setting-symbols">
-                <input type="checkbox" id="symbols" />
-                <label htmlFor="symbols"> Include Symbols</label>
+                <input type="checkbox" id="symbols" className="symbols" />
+                <label className="lable-name" htmlFor="symbols">
+                  {" "}
+                  Include Symbols
+                </label>
               </div>
             </div>
           </div>
           {/* //STRENGTH */}
           <div className="pwd-strength">
-            <p className="strenght-text"></p>
+            <p className="strenght-text">Strength</p>
             <div className="strength-level"></div>
-            <div className="pwd-button">
-              <button onClick={generatePassword}>Generate</button>
-              <span className="icon-btn"></span>
-            </div>
+          </div>
+          <div className="pwd-button">
+            <button onClick={generatePassword}>Generate</button>
+            <span className="icon-btn"></span>
           </div>
         </div>
       </div>
