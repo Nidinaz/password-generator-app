@@ -98,12 +98,31 @@ h3 {
 .pwd-setting-numbers,
 .pwd-setting-symbols,
 .checkbox,
-.lable-name {
+.lable-name,
+.strength-container,
+.pwd-button
+ {
   background-color: $dark-gray;
 }
 
-.pwd-strength {
+.lable-name {
+  color: $light-gray;
 }
 
-.pwd-button {
+
+.pwd-strength {
+  background-color: $dark-gray;
+  display: flex;
+
+}
+
+.strenght-text {
+  background-color: $background-color;
+  width:80%;
+  color: $middle-gray;
+
+}
+
+.pwd-button button {
+  width:80%;
 }
