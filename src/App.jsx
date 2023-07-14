@@ -11,33 +11,23 @@ const App = () => {
   const [includeLowercase, setIncludeLowercase] = useState(false);
   const [includeNumbers, setincludeNumbers] = useState(false);
   const [includeSymbols, setIncludeSymbols] = useState(false);
+  const [passwordProps, setPasswordProps] = useState();
 
-  // const generateNewPassword = () => {
-  //   const pwd =
-  //     passwordRange > 3
-  //       ? generatePassword(
-  //           passwordRange,
-  //           includeUppercase,
-  //           includeLowercase,
-  //           includeNumbers,
-  //           includeSymbols
-  //         )
-  //       : generatePassword(
-  //           includeUppercase,
-  //           includeLowercase,
-  //           includeNumbers,
-  //           includeSymbols,
-  //           3
-  //         );
-  //   setPassword(pwd);
-  // };
+
+  const generateNewPassword = () => {
+    const pwd =
+      passwordRange > 3
+        ? generatePassword(passwordRange, passwordProps)
+        : generatePassword(passwordProps, 3);
+        setPassword(pwd);
+  };
 
   //   const generateNewPassword = () => {
   //     const pwd = rangeValue > 3 ? generatePassword(passwordProps, rangeValue) : generatePassword(passwordProps, 3);
   //     setPassword(pwd);
   // }
 
-  // const generatePassword = () => {
+  // const generateNewPassword = () => {
   // // characters define the items used to
   // const characters =
   //   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
@@ -47,18 +37,20 @@ const App = () => {
   // // Math.random() produces a random number
   // // and characters.length
   // // Math.floor makes sure that it's a whole number
+
   //   let newPassword = "";
+
   //   for (let i = 0; i < 15; i++) {
-  //     newPassword += characters.charAt(
-  //       Math.floor(Math.random() * characters.length)
+  //     newPassword += passwordProps.charAt(
+  //       Math.floor(Math.random() * passwordProps.length)
   //     );
   //   }
   //   setPassword(newPassword);
   // };
 
-  const handleGeneratePassword = (e) => {
+  // const handleGeneratePassword = (e) => {
 
-  }
+  // }
   //   const generateNewPassword = () => {
   //     const pwd = rangeValue > 3 ? generatePassword(passwordProps, rangeValue) : generatePassword(passwordProps, 3);
   //     setPassword(pwd);
@@ -87,8 +79,8 @@ const App = () => {
             data-max={32}
           >
             <input
-            value={passwordRange}
-            onChange={(e) => setPasswordRange(e.target.value)}
+              value={passwordRange}
+              onChange={(e) => setPasswordRange(e.target.value)}
               id="slider"
               type="range"
               min="4"
@@ -129,16 +121,26 @@ const App = () => {
                 </label>
               </div>
               <div className="pwd-setting-numbers">
-                <input type="checkbox" id="numbers" className="numbers" checked={includeNumbers}
-                  onChange={(e) => setincludeNumbers(e.target.checked)} />
+                <input
+                  type="checkbox"
+                  id="numbers"
+                  className="numbers"
+                  checked={includeNumbers}
+                  onChange={(e) => setincludeNumbers(e.target.checked)}
+                />
                 <label className="lable-name" htmlFor="numbers">
                   {" "}
                   Include Numbers
                 </label>
               </div>
               <div className="pwd-setting-symbols">
-                <input type="checkbox" id="symbols" className="symbols" checked={includeSymbols}
-                  onChange={(e) => setIncludeSymbols(e.target.checked)} />
+                <input
+                  type="checkbox"
+                  id="symbols"
+                  className="symbols"
+                  checked={includeSymbols}
+                  onChange={(e) => setIncludeSymbols(e.target.checked)}
+                />
                 <label className="lable-name" htmlFor="symbols">
                   {" "}
                   Include Symbols
@@ -152,7 +154,7 @@ const App = () => {
             <div className="strength-level"></div>
           </div>
           <div className="pwd-button">
-            <button onClick={handleGeneratePassword}>Generate</button>
+            <button handleClick={generateNewPassword}>Generate</button>
             <span className="icon-btn"></span>
           </div>
         </div>
