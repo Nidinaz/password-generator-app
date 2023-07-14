@@ -24,13 +24,13 @@ const App = () => {
     if(includeLowercase) {
       characters = characters + lowerCaseLetters;
     }
-    if(upperCaseLetters) {
+    if(includeUppercase) {
       characters = characters + upperCaseLetters;
     }
-    if(specialCharacters) {
+    if(includeSymbols) {
       characters = characters + specialCharacters;
     }
-    if(numbers) {
+    if(includeNumbers) {
       characters = characters + numbers;
     }
 
