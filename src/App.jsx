@@ -7,10 +7,9 @@ import {
   lowerCaseLetters,
   specialCharacters,
 } from "./utils/Helper";
-// import { generatePassword } from "./utils/Helper";
 
 const App = () => {
-  //useState to change password and save the new state
+
   const [password, setPassword] = useState("");
   const [passwordRange, setPasswordRange] = useState();
   const [includeUppercase, setIncludeUppercase] = useState(false);
@@ -18,24 +17,36 @@ const App = () => {
   const [includeNumbers, setincludeNumbers] = useState(false);
   const [includeSymbols, setIncludeSymbols] = useState(false);
 
-  const generateNewPassword = (event) => {
-    let characters = "";
+  const handleGeneratePassword = (e) => {
+    let characterList = "";
 
     if(includeLowercase) {
-      characters = characters + lowerCaseLetters;
+      characterList = characterList + lowerCaseLetters;
     }
     if(includeUppercase) {
-      characters = characters + upperCaseLetters;
+      characterList = characterList + upperCaseLetters;
     }
     if(includeSymbols) {
-      characters = characters + specialCharacters;
+      characterList = characterList + specialCharacters;
     }
     if(includeNumbers) {
-      characters = characters + numbers;
+      characterList = characterList + numbers;
     }
 
-    setPassword(characters)
+    setPassword(createPassword(characterList))
   };
+
+  const createPassword = (characterList) => {
+    let password = "";
+    const characterListLength = characterList.length
+
+    for(let i = 0; i < passwordRange; i++) {
+      const characterIndex = Math.floor(Math.random() * characterListLength)
+      password = password + characterList.charAt(characterIndex)
+  }
+  return password
+}
+
   // const generateNewPassword = () => {
   //   const pwd =
   //     passwordRange > 3
@@ -176,7 +187,7 @@ const App = () => {
             <div className="strength-level"></div>
           </div>
           <div className="pwd-button">
-            <button onClick={generateNewPassword}>Generate</button>
+            <button onClick={handleGeneratePassword}>Generate</button>
             <span className="icon-btn"></span>
           </div>
         </div>
