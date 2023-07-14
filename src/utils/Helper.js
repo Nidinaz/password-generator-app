@@ -1,3 +1,5 @@
+
+
 //all password options are connected to the characters variable
 //the user just choos lenght
 let characters = '';
