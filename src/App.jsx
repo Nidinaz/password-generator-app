@@ -1,7 +1,13 @@
 import "./stylesApp.scss";
 import { FaCopy } from "react-icons/fa";
 import React, { useState } from "react";
-import { generatePassword } from "./utils/Helper";
+import {
+  numbers,
+  upperCaseLetters,
+  lowerCaseLetters,
+  specialCharacters,
+} from "./utils/Helper";
+// import { generatePassword } from "./utils/Helper";
 
 const App = () => {
   //useState to change password and save the new state
@@ -11,16 +17,32 @@ const App = () => {
   const [includeLowercase, setIncludeLowercase] = useState(false);
   const [includeNumbers, setincludeNumbers] = useState(false);
   const [includeSymbols, setIncludeSymbols] = useState(false);
-  const [passwordProps, setPasswordProps] = useState();
 
+  const generateNewPassword = (event) => {
+    let characters = "";
 
-  const generateNewPassword = () => {
-    const pwd =
-      passwordRange > 3
-        ? generatePassword(passwordRange, passwordProps)
-        : generatePassword(passwordProps, 3);
-        setPassword(pwd);
+    if(includeLowercase) {
+      characters = characters + lowerCaseLetters;
+    }
+    if(upperCaseLetters) {
+      characters = characters + upperCaseLetters;
+    }
+    if(specialCharacters) {
+      characters = characters + specialCharacters;
+    }
+    if(numbers) {
+      characters = characters + numbers;
+    }
+
+    setPassword(characters)
   };
+  // const generateNewPassword = () => {
+  //   const pwd =
+  //     passwordRange > 3
+  //       ? generatePassword(passwordRange, passwordProps)
+  //       : generatePassword(passwordProps, 3);
+  //       setPassword(pwd);
+  // };
 
   //   const generateNewPassword = () => {
   //     const pwd = rangeValue > 3 ? generatePassword(passwordProps, rangeValue) : generatePassword(passwordProps, 3);
@@ -154,7 +176,7 @@ const App = () => {
             <div className="strength-level"></div>
           </div>
           <div className="pwd-button">
-            <button handleClick={generateNewPassword}>Generate</button>
+            <button onClick={generateNewPassword}>Generate</button>
             <span className="icon-btn"></span>
           </div>
         </div>
