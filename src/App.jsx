@@ -47,47 +47,6 @@ const App = () => {
   return password
 }
 
-  // const generateNewPassword = () => {
-  //   const pwd =
-  //     passwordRange > 3
-  //       ? generatePassword(passwordRange, passwordProps)
-  //       : generatePassword(passwordProps, 3);
-  //       setPassword(pwd);
-  // };
-
-  //   const generateNewPassword = () => {
-  //     const pwd = rangeValue > 3 ? generatePassword(passwordProps, rangeValue) : generatePassword(passwordProps, 3);
-  //     setPassword(pwd);
-  // }
-
-  // const generateNewPassword = () => {
-  // // characters define the items used to
-  // const characters =
-  //   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
-
-  // // emty string where the new password is made
-  // // charAt function to select a random character from a string
-  // // Math.random() produces a random number
-  // // and characters.length
-  // // Math.floor makes sure that it's a whole number
-
-  //   let newPassword = "";
-
-  //   for (let i = 0; i < 15; i++) {
-  //     newPassword += passwordProps.charAt(
-  //       Math.floor(Math.random() * passwordProps.length)
-  //     );
-  //   }
-  //   setPassword(newPassword);
-  // };
-
-  // const handleGeneratePassword = (e) => {
-
-  // }
-  //   const generateNewPassword = () => {
-  //     const pwd = rangeValue > 3 ? generatePassword(passwordProps, rangeValue) : generatePassword(passwordProps, 3);
-  //     setPassword(pwd);
-  // }
 
   return (
     <div className="main-container">
