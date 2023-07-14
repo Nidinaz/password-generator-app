@@ -122,8 +122,12 @@ h3 {
 .pwd-button {
   display: flex;
   justify-content: center;
+  text-transform: capitalize;
+
 }
 
-button {
+.pwd-button button {
   width: 80%;
+  padding: 1em 1em;
+
 }
