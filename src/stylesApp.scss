@@ -35,7 +35,7 @@ h3 {
 }
 
 //Password
-.pwd-container {
+.password-container {
   background-color: $dark-gray;
   width: 400px;
   height: 600px;
@@ -43,7 +43,7 @@ h3 {
   margin: unset;
 }
 
-.container-generated-pwd {
+.generated-password-container {
   background-color: $dark-gray;
   font-weight: bolder;
   color: $middle-gray;
@@ -53,7 +53,7 @@ h3 {
   align-items: center;
 }
 
-.generated-pwd {
+.generated-password-field {
   color: $light-gray;
   background-color: $dark-gray;
   font-size: $heading-font-size-M;
@@ -68,11 +68,11 @@ h3 {
 }
 
 //Slider
-.pwd-parameters {
+.password-parameters {
   background-color: $dark-gray;
 }
 
-.pwd-parameters-visable p {
+.password-parameters-visable p {
   background-color: $dark-gray;
 }
 
@@ -80,26 +80,26 @@ h3 {
   height: 1em;
 }
 
-.pwd-button button {
+.password-button button {
   background-color: $green;
 }
 
-.pwd-parameters-length-slider {
+.password-parameters-length-slider {
   background-color: $dark-gray;
 }
 
-.pwd-settings-checkbox {
+.password-settings-checkbox {
   background-color: $dark-gray;
 }
 
-.pwd-setting-uppercase,
-.pwd-setting-lowercase,
-.pwd-setting-numbers,
-.pwd-setting-symbols,
+.password-setting-uppercase,
+.password-setting-lowercase,
+.password-setting-numbers,
+.password-setting-symbols,
 .checkbox,
 .lable-name,
 .strength-container,
-.pwd-button {
+.password-button {
   background-color: $dark-gray;
 }
 
@@ -107,7 +107,7 @@ h3 {
   color: $light-gray;
 }
 
-.pwd-strength {
+.password-strength {
   background-color: $dark-gray;
   display: flex;
   justify-content: center;
@@ -119,14 +119,14 @@ h3 {
   color: $middle-gray;
 }
 
-.pwd-button {
+.password-button {
   display: flex;
   justify-content: center;
   text-transform: capitalize;
 
 }
 
-.pwd-button button {
+.password-button button {
   width: 80%;
   padding: 1em 1em;
 
