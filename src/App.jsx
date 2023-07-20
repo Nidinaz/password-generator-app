@@ -11,14 +11,10 @@ const App = () => {
   //all states
   const [password, setPassword] = useState("");
   const [passwordRange, setPasswordRange] = useState(8);
-  const [includeUppercase, setIncludeUppercase] = useState(false);
-  const [includeLowercase, setIncludeLowercase] = useState(false);
-  const [includeNumbers, setincludeNumbers] = useState(false);
-  const [includeSymbols, setIncludeSymbols] = useState(false);
-
-  const [strenght, setStrength] = useState('');
-  const [copy, setCopy] = useState(false);
-  const [color, setColor] = useState("#FF0000")
+  const [includeUppercase, setIncludeUppercase] = useState(true);
+  const [includeLowercase, setIncludeLowercase] = useState(true);
+  const [includeNumbers, setincludeNumbers] = useState(true);
+  const [includeSymbols, setIncludeSymbols] = useState(true);
 
 
 //which characters will be included in the generated password?
@@ -44,6 +40,14 @@ const App = () => {
 
     setPassword(createPassword(characterList));
   };
+
+  //Passing Function as an Argument (arguemnt is in the View)
+  const handleChangeUppercase = (e) => setIncludeUppercase(e.target.checked)
+  const handleChangeLowercase = (e) => setIncludeLowercase(e.target.checked)
+  const handleChangeSymbols = (e) => setIncludeSymbols(e.target.checked)
+  const handleChangeNumbers = (e) => setincludeNumbers(e.target.checked)
+  const handlePasswordRange = (e) => setPasswordRange(e.target.value)
+
 
   //the Math behind the randomness of the characters in the password
   //characterList is given as property because ...?
@@ -83,7 +87,7 @@ const App = () => {
           >
             <input
               value={passwordRange}
-              onChange={(e) => setPasswordRange(e.target.value)}
+              onChange={handlePasswordRange}
               id="slider"
               type="range"
               min="4"
@@ -104,7 +108,7 @@ const App = () => {
                   className="uppercase"
                   checked={includeUppercase}
                   value={includeUppercase}
-                  onChange={(e) => setIncludeUppercase(e.target.checked)}
+                  onChange={handleChangeUppercase}
                 />
                 <label className="lable-name" htmlFor="uppercase">
                   {" "}
@@ -118,7 +122,7 @@ const App = () => {
                   className="lowercase"
                   checked={includeLowercase}
                   value={includeLowercase}
-                  onChange={(e) => setIncludeLowercase(e.target.checked)}
+                  onChange={handleChangeLowercase}
                 />
                 <label className="lable-name" htmlFor="lowercase">
                   {" "}
@@ -132,7 +136,7 @@ const App = () => {
                   className="numbers"
                   checked={includeNumbers}
                   value={includeNumbers}
-                  onChange={(e) => setincludeNumbers(e.target.checked)}
+                  onChange={handleChangeNumbers}
                 />
                 <label className="lable-name" htmlFor="numbers">
                   {" "}
@@ -146,7 +150,7 @@ const App = () => {
                   className="symbols"
                   checked={includeSymbols}
                   value={includeSymbols}
-                  onChange={(e) => setIncludeSymbols(e.target.checked)}
+                  onChange={handleChangeSymbols}
                 />
                 <label className="lable-name" htmlFor="symbols">
                   {" "}
